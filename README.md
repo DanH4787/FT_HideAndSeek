@@ -35,7 +35,10 @@ Cast<ACharacter>(GetPawn())->GetCharacterMovement()->MaxWalkSpeed = ;
 
 ## Medium
 * Look at the **FT\_HUD** focus topic, and the Naïve State machine, try to implement that with 3 key states, IDLE (Player is more than 1000 away), HUNT (Player is less than 1000 away), KILLED (Player is less than 100 away, stop player movement)
-* Add feedback to the player, so they know when they are safe, hunted and dead. This could be audio, a sign in a Widget, or a screen overlay effect.
+* Add feedback to the player, so they know when they are safe, hunted and dead. This could be audio, a sign in a Widget, or a screen overlay effect. See how I do the distance in **StalkerAIController->Tick**
+```
+if (FVector::Dist(GetPawn()->GetActorLocation(), Target) < 200.0f) 
+```
 * Add an Objective, such as a collectables for the player (**FT_ReloadingAndAmmo**), that affects the AI, e.g., every time the player collects, the AI's speed is slightly increased, and the detection radius increases
 
 ## Hard
