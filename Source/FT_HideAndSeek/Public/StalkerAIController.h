@@ -15,7 +15,7 @@ class FT_HIDEANDSEEK_API AStalkerAIController : public AAIController
 	GENERATED_BODY()
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI")
-	bool bIsStalkingPlayer = false;
+	bool bIsStalkingPlayer = true;
 	virtual void Tick(float DeltaTime) override;
 	virtual void BeginPlay() override;
 private:
